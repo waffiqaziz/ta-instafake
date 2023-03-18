@@ -43,8 +43,5 @@ def import_data(dataset_path, dataset_version):
   real_account_dataframe = create_dataframe(real_account_data)
   merged_dataframe = pd.concat([fake_account_dataframe, real_account_dataframe], 
                                ignore_index=True, axis=1)
-  data = dict({"dataset_type":"fake/real",
-                  "dataframe":merged_dataframe})
-      
-  # return data # return as dictionaries
+
   return merged_dataframe # return as dataframe
